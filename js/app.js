@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const todoForm = document.querySelector("#todo-form");
     const todoInput = document.querySelector("#todo-input");
-    const todoList = document.querySelector("todo-list");
-    const errorMsg = document.querySelector("error-msg");
+    const todoList = document.querySelector("#todo-list");
+    const errorMsg = document.querySelector("#error-msg");
     const counter = document.querySelector("#counter");
     const filterAll = document.querySelector("#filter-all");
     const filterActive = document.querySelector("#filter-active");
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     todoForm.addEventListener("submit", function (e){
         e.preventDefault();
-        const taskText = todoInput.ariaValueMax.trim();
+        const taskText = todoInput.Value.trim();
 
         if (taskText === ""){
             errorMsg.classList.remove("hidden");
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         else if (target.classList.contains("item-text")) {
-            const li = target.clossest("li");
+            const li = target.closest("li");
             li.classList.toggle("completed");
             updateCounter();
             applyFilter();
