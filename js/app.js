@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     todoForm.addEventListener("submit", function (e){
         e.preventDefault();
-        const taskText = todoInput.Value.trim();
+        const taskText = todoInput.value.trim();
 
         if (taskText === ""){
             errorMsg.classList.remove("hidden");
